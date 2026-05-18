@@ -1,1 +1,213 @@
-<h1>Ayush Kakkar</h1>
+export default function ResumeWebsite() {
+  return (
+    <div className="min-h-screen bg-[#0a0a0f] text-white overflow-x-hidden relative">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(120,119,198,0.18),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.12),transparent_30%)]"></div>
+      <div className="absolute inset-0 backdrop-blur-3xl"></div>
+
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+      <main className="relative z-10 max-w-6xl mx-auto px-6 py-14 md:px-10">
+        {/* Hero Section */}
+        <section className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-gray-300 mb-6 shadow-lg shadow-cyan-500/5">
+              <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
+              AI • Web Development • Entrepreneurship
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-none mb-6">
+              Ayush
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-violet-400">
+                Kakkar
+              </span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl">
+              High school student, aspiring entrepreneur, and technology enthusiast focused on building modern digital experiences through AI, web development, and automation.
+            </p>
+          </div>
+
+          <div className="w-full lg:w-[340px]">
+            <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-2xl shadow-blue-500/10">
+              <h2 className="text-lg font-semibold mb-5 text-white">Contact</h2>
+
+              <div className="space-y-4 text-gray-300 text-sm">
+                <div>
+                  <p className="text-gray-500 text-xs uppercase tracking-widest mb-1">Email</p>
+                  <p>ayushkakkar27@gmail.com</p>
+                </div>
+
+                <div>
+                  <p className="text-gray-500 text-xs uppercase tracking-widest mb-1">Location</p>
+                  <p>Gurugram, Haryana, India</p>
+                </div>
+
+                <div>
+                  <p className="text-gray-500 text-xs uppercase tracking-widest mb-1">LinkedIn</p>
+                  <p className="text-cyan-300 break-all">linkedin.com/in/ayush-kakkar27</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About + Skills */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 shadow-xl shadow-cyan-500/5">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300">
+                ✦
+              </div>
+              <h2 className="text-2xl font-bold">Professional Summary</h2>
+            </div>
+
+            <p className="text-gray-400 leading-relaxed text-[15px]">
+              Motivated and self-driven student with hands-on experience in website development, AI tools, and client-based projects. Passionate about combining technology with creativity to build impactful digital products. Skilled in communication, analytical thinking, and adapting quickly to modern technologies.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl hover:border-violet-400/30 transition-all duration-300 shadow-xl shadow-violet-500/5">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-2xl bg-violet-500/10 border border-violet-400/20 flex items-center justify-center text-violet-300">
+                ⚡
+              </div>
+              <h2 className="text-2xl font-bold">Core Skills</h2>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {[
+                'Artificial Intelligence',
+                'Web Development',
+                'SEO Fundamentals',
+                'Analytical Thinking',
+                'Problem Solving',
+                'Automation Tools',
+                'Writing',
+                'Client Communication',
+                'Digital Strategy',
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 hover:border-cyan-400/40 hover:text-white transition-all"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Experience */}
+        <section className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 rounded-2xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-blue-300">
+              ⌘
+            </div>
+            <h2 className="text-3xl font-bold">Projects & Experience</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Freelance Website Development',
+                description:
+                  'Designed and developed responsive websites for businesses and clients while working on deployment planning, domain setup, and SEO integration.',
+              },
+              {
+                title: 'AI Content & Automation',
+                description:
+                  'Explored AI-powered tools for workflow automation, media generation, and content creation to improve efficiency and productivity.',
+              },
+              {
+                title: 'Machine Learning Exploration',
+                description:
+                  'Built foundational understanding of neural networks, chatbot systems, AI ethics, and modern AI technologies through practical learning.',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.03] p-7 backdrop-blur-xl hover:-translate-y-1 transition-all duration-300 hover:border-cyan-400/30"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl mb-5 group-hover:border-cyan-400/30 transition-all">
+                  ✧
+                </div>
+
+                <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Education + Certifications */}
+        <section className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-8 mb-16">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center text-emerald-300">
+                ▣
+              </div>
+              <h2 className="text-2xl font-bold">Education</h2>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold">G.D. Goenka Public School</h3>
+              <p className="text-gray-400 mt-2">Expected Graduation: March 2026</p>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-2xl bg-pink-500/10 border border-pink-400/20 flex items-center justify-center text-pink-300">
+                ◎
+              </div>
+              <h2 className="text-2xl font-bold">Certifications</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
+              {[
+                'Build Your Own Chatbot – Level 1',
+                'Claude Code 101',
+                'Workshop on Learn To Lead',
+                'Train To Think Workshop',
+                'AI Ethics & Open Source Technologies',
+                'Neural Networks Learning Modules',
+              ].map((cert) => (
+                <div
+                  key={cert}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 hover:border-cyan-400/30 transition-all"
+                >
+                  {cert}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Publication */}
+        <section className="rounded-3xl border border-white/10 bg-gradient-to-r from-cyan-500/5 to-violet-500/5 p-8 backdrop-blur-xl mb-10">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300">
+              ✍
+            </div>
+            <h2 className="text-2xl font-bold">Publication</h2>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-2">The Cradle House</h3>
+            <p className="text-gray-400 text-sm">Published work authored by Ayush Kakkar.</p>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <p>Designed with a modern futuristic aesthetic.</p>
+          <p>© 2026 Ayush Kakkar</p>
+        </footer>
+      </main>
+    </div>
+  )
+}
