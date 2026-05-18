@@ -1,429 +1,548 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayush Kakkar | Resume</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="Ayush Kakkar - Student, AI Enthusiast, Web Developer & Future Tech Founder."
+  />
+  <title>Ayush Kakkar | AI & Web Developer</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    :root {
-      --bg: #070b14;
-      --card: rgba(255,255,255,0.05);
-      --border: rgba(255,255,255,0.08);
-      --text: #ffffff;
-      --muted: #9aa4b2;
-      --accent: #67e8f9;
-      --accent2: #8b5cf6;
-    }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      min-height: 100vh;
-      position: relative;
-    }
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
 
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at top right, rgba(103,232,249,0.15), transparent 25%),
-        radial-gradient(circle at bottom left, rgba(139,92,246,0.12), transparent 30%);
-      z-index: -2;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: -1;
-      opacity: 0.4;
-    }
-
-    .container {
-      width: min(1200px, 92%);
-      margin: auto;
-      padding: 60px 0;
-    }
-
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      align-items: flex-start;
-      margin-bottom: 80px;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      margin-bottom: 24px;
-      backdrop-filter: blur(12px);
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 14px var(--accent);
-    }
-
-    h1 {
-      font-size: clamp(3.5rem, 9vw, 6.5rem);
-      line-height: 0.95;
-      font-weight: 900;
-      letter-spacing: -3px;
-      margin-bottom: 22px;
-    }
-
-    h1 span {
-      display: block;
-      background: linear-gradient(90deg, var(--accent), #60a5fa, var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .subtitle {
-      max-width: 700px;
-      color: var(--muted);
-      font-size: 1.15rem;
-      line-height: 1.8;
-    }
-
-    .glass-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 32px;
-      backdrop-filter: blur(20px);
-      transition: 0.35s ease;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    }
-
-    .glass-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(103,232,249,0.25);
-    }
-
-    .contact-card {
-      width: 320px;
-    }
-
-    .section {
-      margin-bottom: 32px;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 26px;
-    }
-
-    .icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: rgba(103,232,249,0.08);
-      border: 1px solid rgba(103,232,249,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 18px;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-bottom: 28px;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .skill {
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #d1d5db;
-      font-size: 0.92rem;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .project h3 {
-      margin: 18px 0 12px;
-      font-size: 1.15rem;
-    }
-
-    .project p,
-    .muted {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .certifications {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .cert-item {
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      color: #dbe4ee;
-      transition: 0.3s ease;
-    }
-
-    .cert-item:hover {
-      border-color: rgba(103,232,249,0.3);
-      transform: translateY(-3px);
-    }
-
-    .footer {
-      margin-top: 60px;
-      padding-top: 28px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      color: #7c8796;
-      font-size: 0.92rem;
-    }
-
-    .label {
-      color: #6b7280;
-      font-size: 0.78rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 40px 0;
-      }
-
-      .hero {
-        margin-bottom: 50px;
-      }
-
-      .contact-card {
-        width: 100%;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="container">
 
-    <section class="hero">
-      <div>
-        <div class="badge">
-          <div class="dot"></div>
-          AI • Web Development • Entrepreneurship
-        </div>
+<body>
+
+  <!-- LOADER -->
+  <div class="loader">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow"></div>
+
+  <!-- PARTICLES -->
+  <div class="particles"></div>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#" class="logo">
+        Ayush<span>.</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#timeline" class="nav-link">Journey</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="menu-btn">
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero section" id="hero">
+    <div class="hero-gradient"></div>
+
+    <div class="container hero-container">
+
+      <div class="hero-content reveal">
+        <p class="hero-tag">
+          Future Founder • Developer • AI Enthusiast
+        </p>
 
         <h1>
-          Ayush
-          <span>Kakkar</span>
+          Building the <span>Future</span><br />
+          with AI & Code
         </h1>
 
-        <p class="subtitle">
-          High school student, aspiring entrepreneur, and technology enthusiast focused on building modern digital experiences through AI, web development, automation, and creative problem solving.
+        <p class="hero-description">
+          I'm Ayush Kakkar — a student, web developer, and AI enthusiast
+          building modern digital experiences while preparing for JEE 2026
+          and exploring startups, machine learning, and prompt engineering.
         </p>
-      </div>
 
-      <div class="glass-card contact-card">
-        <div class="section-title">
-          <div class="icon">✦</div>
-          <h2>Contact</h2>
+        <div class="typing-container">
+          <span id="typing-text"></span>
         </div>
 
-        <div class="section">
-          <div class="label">Email</div>
-          <p>ayushkakkar27@gmail.com</p>
-        </div>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary-btn">
+            View Projects
+          </a>
 
-        <div class="section">
-          <div class="label">Location</div>
-          <p>Gurugram, Haryana, India</p>
-        </div>
-
-        <div class="section">
-          <div class="label">LinkedIn</div>
-          <a href="https://linkedin.com/in/ayush-kakkar27" target="_blank">
-            linkedin.com/in/ayush-kakkar27
+          <a href="#contact" class="btn secondary-btn">
+            Contact Me
           </a>
         </div>
       </div>
-    </section>
 
-    <div class="grid-2">
-      <section class="glass-card">
-        <div class="section-title">
-          <div class="icon">⚡</div>
-          <h2>Professional Summary</h2>
+      <div class="hero-card reveal">
+        <div class="glass-card">
+          <div class="card-glow"></div>
+
+          <div class="hero-mini-card">
+            <span>AI & Tech</span>
+            <h3>Building modern digital products.</h3>
+          </div>
+
+          <div class="hero-grid">
+            <div class="mini-box">
+              <i class="fa-solid fa-code"></i>
+              <span>Frontend</span>
+            </div>
+
+            <div class="mini-box">
+              <i class="fa-solid fa-brain"></i>
+              <span>AI Tools</span>
+            </div>
+
+            <div class="mini-box">
+              <i class="fa-solid fa-rocket"></i>
+              <span>Startups</span>
+            </div>
+
+            <div class="mini-box">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span>Web Apps</span>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <p class="muted">
-          Motivated and self-driven student with hands-on experience in website development, AI tools, and client-based projects. Passionate about combining technology with creativity to build impactful digital products. Skilled in communication, analytical thinking, and adapting quickly to modern technologies.
-        </p>
-      </section>
-
-      <section class="glass-card">
-        <div class="section-title">
-          <div class="icon">⌘</div>
-          <h2>Core Skills</h2>
-        </div>
-
-        <div class="skills">
-          <div class="skill">Artificial Intelligence</div>
-          <div class="skill">Web Development</div>
-          <div class="skill">SEO Fundamentals</div>
-          <div class="skill">Analytical Thinking</div>
-          <div class="skill">Problem Solving</div>
-          <div class="skill">Automation Tools</div>
-          <div class="skill">Client Communication</div>
-          <div class="skill">Writing</div>
-          <div class="skill">Digital Strategy</div>
-        </div>
-      </section>
     </div>
+  </section>
 
-    <section class="section">
-      <div class="section-title">
-        <div class="icon">◎</div>
-        <h2>Projects & Experience</h2>
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <p class="section-tag">About Me</p>
+        <h2>Young Builder with a Vision</h2>
       </div>
 
-      <div class="projects">
-        <div class="glass-card project">
-          <div class="icon">✧</div>
-          <h3>Freelance Website Development</h3>
+      <div class="about-grid">
+
+        <div class="about-content reveal">
           <p>
-            Designed and developed responsive websites for businesses and clients while working on deployment planning, domain setup, and SEO integration.
+            I'm a 17-year-old student from Gurgaon, India, passionate about
+            technology, AI, and entrepreneurship.
+          </p>
+
+          <p>
+            Alongside preparing for JEE 2026 and exploring IPMAT, I build
+            websites for clients, learn machine learning fundamentals, and
+            experiment with modern AI tools and prompt engineering.
+          </p>
+
+          <p>
+            My goal is to build impactful digital products, create a strong
+            online presence, and combine technology with business to create
+            meaningful solutions.
           </p>
         </div>
 
-        <div class="glass-card project">
-          <div class="icon">✧</div>
-          <h3>AI Content & Automation</h3>
-          <p>
-            Explored AI-powered tools for workflow automation, media generation, and content creation to improve productivity and efficiency.
-          </p>
-        </div>
+        <div class="stats-grid">
 
-        <div class="glass-card project">
-          <div class="icon">✧</div>
-          <h3>Machine Learning Exploration</h3>
-          <p>
-            Built foundational understanding of neural networks, chatbot systems, AI ethics, and modern AI technologies through practical learning.
-          </p>
+          <div class="stat-card reveal">
+            <h3 data-target="12">0</h3>
+            <p>Websites Built</p>
+          </div>
+
+          <div class="stat-card reveal">
+            <h3 data-target="35">0</h3>
+            <p>AI Tools Explored</p>
+          </div>
+
+          <div class="stat-card reveal">
+            <h3 data-target="1800">0</h3>
+            <p>Hours Learning</p>
+          </div>
+
+          <div class="stat-card reveal">
+            <h3 data-target="24">0</h3>
+            <p>Projects Completed</p>
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <div class="grid-2">
-      <section class="glass-card">
-        <div class="section-title">
-          <div class="icon">▣</div>
-          <h2>Education</h2>
-        </div>
-
-        <h3>G.D. Goenka Public School</h3>
-        <p class="muted" style="margin-top:10px;">
-          Expected Graduation: March 2026
-        </p>
-      </section>
-
-      <section class="glass-card">
-        <div class="section-title">
-          <div class="icon">✦</div>
-          <h2>Certifications</h2>
-        </div>
-
-        <div class="certifications">
-          <div class="cert-item">Build Your Own Chatbot – Level 1</div>
-          <div class="cert-item">Claude Code 101</div>
-          <div class="cert-item">Workshop on Learn To Lead</div>
-          <div class="cert-item">Train To Think Workshop</div>
-          <div class="cert-item">AI Ethics & Open Source Technologies</div>
-          <div class="cert-item">Neural Networks Learning Modules</div>
-        </div>
-      </section>
     </div>
+  </section>
 
-    <section class="glass-card">
-      <div class="section-title">
-        <div class="icon">✍</div>
-        <h2>Publication</h2>
+  <!-- SKILLS -->
+  <section class="skills section" id="skills">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <p class="section-tag">Skills</p>
+        <h2>Technology & Creative Stack</h2>
       </div>
 
-      <h3>The Cradle House</h3>
-      <p class="muted" style="margin-top:10px;">
-        Published work authored by Ayush Kakkar.
-      </p>
-    </section>
+      <div class="skills-grid">
 
-    <footer class="footer">
-      <p>Modern futuristic resume website.</p>
-      <p>© 2026 Ayush Kakkar</p>
-    </footer>
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>HTML</span>
+            <span>95%</span>
+          </div>
 
-  </div>
+          <div class="progress-bar">
+            <div class="progress" data-width="95%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>CSS</span>
+            <span>92%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress" data-width="92%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>JavaScript</span>
+            <span>85%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress" data-width="85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>AI Tools</span>
+            <span>90%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress" data-width="90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>Prompt Engineering</span>
+            <span>82%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress" data-width="82%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>Responsive Design</span>
+            <span>90%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress" data-width="90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>SEO Basics</span>
+            <span>75%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress" data-width="75%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>UI/UX</span>
+            <span>84%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress" data-width="84%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>Machine Learning Basics</span>
+            <span>70%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress" data-width="70%"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects section" id="projects">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <p class="section-tag">Projects</p>
+        <h2>Selected Work & Concepts</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-image gradient-1"></div>
+
+          <div class="project-content">
+            <h3>AI Content Studio</h3>
+
+            <p>
+              AI-powered content generation and automation concept for creators
+              and businesses.
+            </p>
+
+            <div class="tech-stack">
+              <span>AI</span>
+              <span>Automation</span>
+              <span>UI/UX</span>
+            </div>
+
+            <div class="project-buttons">
+              <a href="#" class="project-btn">Live Demo</a>
+              <a href="#" class="project-btn secondary">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-image gradient-2"></div>
+
+          <div class="project-content">
+            <h3>Fitness Gym Website</h3>
+
+            <p>
+              High-converting gym website designed for local fitness businesses
+              with modern visuals.
+            </p>
+
+            <div class="tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+
+            <div class="project-buttons">
+              <a href="#" class="project-btn">Live Demo</a>
+              <a href="#" class="project-btn secondary">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-image gradient-3"></div>
+
+          <div class="project-content">
+            <h3>Personal AI Assistant</h3>
+
+            <p>
+              Productivity-focused AI assistant concept for task management and
+              workflow optimization.
+            </p>
+
+            <div class="tech-stack">
+              <span>AI</span>
+              <span>Productivity</span>
+              <span>Concept</span>
+            </div>
+
+            <div class="project-buttons">
+              <a href="#" class="project-btn">Live Demo</a>
+              <a href="#" class="project-btn secondary">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-image gradient-4"></div>
+
+          <div class="project-content">
+            <h3>Startup Landing Page</h3>
+
+            <p>
+              Premium SaaS-style landing page built with a modern startup design
+              aesthetic.
+            </p>
+
+            <div class="tech-stack">
+              <span>Frontend</span>
+              <span>UI Design</span>
+              <span>Responsive</span>
+            </div>
+
+            <div class="project-buttons">
+              <a href="#" class="project-btn">Live Demo</a>
+              <a href="#" class="project-btn secondary">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline section" id="timeline">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <p class="section-tag">Journey</p>
+        <h2>Growth Timeline</h2>
+      </div>
+
+      <div class="timeline-wrapper">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Started Learning Web Development</h3>
+            <p>
+              Began exploring frontend development and modern web technologies.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Built First Client Website</h3>
+            <p>
+              Started creating websites for businesses and real-world clients.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Explored AI Tools</h3>
+            <p>
+              Started experimenting with AI workflows and productivity systems.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Learned Machine Learning Basics</h3>
+            <p>
+              Studied neural networks and machine learning fundamentals.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>JEE + Entrepreneurship Journey</h3>
+            <p>
+              Balancing academics, technology, startups, and personal branding.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <p class="section-tag">Contact</p>
+        <h2>Let's Build Something Great</h2>
+      </div>
+
+      <div class="contact-wrapper reveal">
+
+        <form id="contact-form">
+
+          <div class="input-group">
+            <input type="text" id="name" placeholder="Your Name" />
+          </div>
+
+          <div class="input-group">
+            <input type="email" id="email" placeholder="Your Email" />
+          </div>
+
+          <div class="input-group">
+            <textarea
+              id="message"
+              rows="6"
+              placeholder="Your Message"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn primary-btn submit-btn">
+            Send Message
+          </button>
+
+          <p class="form-message"></p>
+
+        </form>
+
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>
+      Designed & Built by Ayush Kakkar
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
