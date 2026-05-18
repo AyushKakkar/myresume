@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayush Kakkar | Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #070b14;
+      --card: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.08);
+      --text: #ffffff;
+      --muted: #9aa4b2;
+      --accent: #67e8f9;
+      --accent2: #8b5cf6;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(103,232,249,0.15), transparent 25%),
+        radial-gradient(circle at bottom left, rgba(139,92,246,0.12), transparent 30%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 80px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      margin-bottom: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(3.5rem, 9vw, 6.5rem);
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      display: block;
+      background: linear-gradient(90deg, var(--accent), #60a5fa, var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+
+    .glass-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 32px;
+      backdrop-filter: blur(20px);
+      transition: 0.35s ease;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(103,232,249,0.25);
+    }
+
+    .contact-card {
+      width: 320px;
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(103,232,249,0.08);
+      border: 1px solid rgba(103,232,249,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .skill {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #d1d5db;
+      font-size: 0.92rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .project h3 {
+      margin: 18px 0 12px;
+      font-size: 1.15rem;
+    }
+
+    .project p,
+    .muted {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .certifications {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .cert-item {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: #dbe4ee;
+      transition: 0.3s ease;
+    }
+
+    .cert-item:hover {
+      border-color: rgba(103,232,249,0.3);
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: #7c8796;
+      font-size: 0.92rem;
+    }
+
+    .label {
+      color: #6b7280;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 40px 0;
+      }
+
+      .hero {
+        margin-bottom: 50px;
+      }
+
+      .contact-card {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="hero">
+      <div>
+        <div class="badge">
+          <div class="dot"></div>
+          AI • Web Development • Entrepreneurship
+        </div>
+
+        <h1>
+          Ayush
+          <span>Kakkar</span>
+        </h1>
+
+        <p class="subtitle">
+          High school student, aspiring entrepreneur, and technology enthusiast focused on building modern digital experiences through AI, web development, automation, and creative problem solving.
+        </p>
+      </div>
+
+      <div class="glass-card contact-card">
+        <div class="section-title">
+          <div class="icon">✦</div>
+          <h2>Contact</h2>
+        </div>
+
+        <div class="section">
+          <div class="label">Email</div>
+          <p>ayushkakkar27@gmail.com</p>
+        </div>
+
+        <div class="section">
+          <div class="label">Location</div>
+          <p>Gurugram, Haryana, India</p>
+        </div>
+
+        <div class="section">
+          <div class="label">LinkedIn</div>
+          <a href="https://linkedin.com/in/ayush-kakkar27" target="_blank">
+            linkedin.com/in/ayush-kakkar27
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <section class="glass-card">
+        <div class="section-title">
+          <div class="icon">⚡</div>
+          <h2>Professional Summary</h2>
+        </div>
+
+        <p class="muted">
+          Motivated and self-driven student with hands-on experience in website development, AI tools, and client-based projects. Passionate about combining technology with creativity to build impactful digital products. Skilled in communication, analytical thinking, and adapting quickly to modern technologies.
+        </p>
+      </section>
+
+      <section class="glass-card">
+        <div class="section-title">
+          <div class="icon">⌘</div>
+          <h2>Core Skills</h2>
+        </div>
+
+        <div class="skills">
+          <div class="skill">Artificial Intelligence</div>
+          <div class="skill">Web Development</div>
+          <div class="skill">SEO Fundamentals</div>
+          <div class="skill">Analytical Thinking</div>
+          <div class="skill">Problem Solving</div>
+          <div class="skill">Automation Tools</div>
+          <div class="skill">Client Communication</div>
+          <div class="skill">Writing</div>
+          <div class="skill">Digital Strategy</div>
+        </div>
+      </section>
+    </div>
+
+    <section class="section">
+      <div class="section-title">
+        <div class="icon">◎</div>
+        <h2>Projects & Experience</h2>
+      </div>
+
+      <div class="projects">
+        <div class="glass-card project">
+          <div class="icon">✧</div>
+          <h3>Freelance Website Development</h3>
+          <p>
+            Designed and developed responsive websites for businesses and clients while working on deployment planning, domain setup, and SEO integration.
+          </p>
+        </div>
+
+        <div class="glass-card project">
+          <div class="icon">✧</div>
+          <h3>AI Content & Automation</h3>
+          <p>
+            Explored AI-powered tools for workflow automation, media generation, and content creation to improve productivity and efficiency.
+          </p>
+        </div>
+
+        <div class="glass-card project">
+          <div class="icon">✧</div>
+          <h3>Machine Learning Exploration</h3>
+          <p>
+            Built foundational understanding of neural networks, chatbot systems, AI ethics, and modern AI technologies through practical learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <section class="glass-card">
+        <div class="section-title">
+          <div class="icon">▣</div>
+          <h2>Education</h2>
+        </div>
+
+        <h3>G.D. Goenka Public School</h3>
+        <p class="muted" style="margin-top:10px;">
+          Expected Graduation: March 2026
+        </p>
+      </section>
+
+      <section class="glass-card">
+        <div class="section-title">
+          <div class="icon">✦</div>
+          <h2>Certifications</h2>
+        </div>
+
+        <div class="certifications">
+          <div class="cert-item">Build Your Own Chatbot – Level 1</div>
+          <div class="cert-item">Claude Code 101</div>
+          <div class="cert-item">Workshop on Learn To Lead</div>
+          <div class="cert-item">Train To Think Workshop</div>
+          <div class="cert-item">AI Ethics & Open Source Technologies</div>
+          <div class="cert-item">Neural Networks Learning Modules</div>
+        </div>
+      </section>
+    </div>
+
+    <section class="glass-card">
+      <div class="section-title">
+        <div class="icon">✍</div>
+        <h2>Publication</h2>
+      </div>
+
+      <h3>The Cradle House</h3>
+      <p class="muted" style="margin-top:10px;">
+        Published work authored by Ayush Kakkar.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>Modern futuristic resume website.</p>
+      <p>© 2026 Ayush Kakkar</p>
+    </footer>
+
+  </div>
+</body>
+</html>
